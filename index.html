@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="styles/game.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;7000&display=swap" 
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" 
 rel="stylesheet">
-    <title>Tic Tac Toe </title>
+<title>Tic Tac Toe </title>
 </head>
 <body>
     <div id="backdrop"></div>
@@ -25,10 +25,11 @@ rel="stylesheet">
             <form>
                 <div class="form-control">
                     <label for="playername">Player name</label>
-                    <input type="text" name="playername" id="playername"/>
+                    <input type="text" name="playername" id="playername" required/>
                 </div>
+                    <p id="config-errors"></p>
                 <div>
-                    <button type="button" class="btn btn-alt">Cancel</button>
+                    <button type="reset" class="btn btn-alt" id="close-overlay">Cancel</button>
                     <button type="submit" class="btn">Confirm</button>
                 </div>
             </form>
@@ -36,19 +37,19 @@ rel="stylesheet">
         <section id="game-configuration">
             <ol>
                 <li>
-                    <article>
+                    <article id="player-1-data">
                         <h2>Player 1</h2>
                         <h3>PLAYER NAME</h3>
                         <p class="player-symbol">X</p>
-                        <button class="btn btn-alt">Edit</button>
+                        <button class="btn btn-alt" id="edit-player-1-btn" data-playerid="1">Edit</button>
                     </article>
                 </li>
                 <li>
-                    <article>
+                    <article id="player-2-data">
                         <h2>Player 2</h2>
                         <h3>PLAYER NAME</h3>
                         <p class="player-symbol">O</p>
-                        <button class="btn btn-alt">Edit</button>
+                        <button class="btn btn-alt" id="edit-player-2-btn" data-playerid="2">Edit</button>
                     </article>
                 </li>        
             </ol>
@@ -76,5 +77,8 @@ rel="stylesheet">
             </ol>
         </section>
     </main>
+    <script src="Scripts/game.js" defer></script>
+    <script src="Scripts/Config.js" defer></script>
+    <script src="Scripts/app.js" defer></script>
 </body>
 </html>
