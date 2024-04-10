@@ -1,4 +1,16 @@
+const gameData = [
+[0, 0, 0], 
+[0, 0, 0],
+[0, 0, 0],
+];
+
+
+
+
 let editedPlayer = 0;
+let activePlayer = 0;
+let currentRound = 1;
+let gameIsOver = false;  //set to true at endGame to not allow clicking after game is over
 
 const players = [
     {
@@ -16,14 +28,31 @@ const backdropElement = document.getElementById("backdrop");
 const formElement = document.querySelector('form');
 const errorsOutputElement =document.getElementById('config-errors');
 
-const editPlayer1BtnElement = document.getElementById("edit-player-1-btn");
-const editPlayer2BtnElement = document.getElementById("edit-player-2-btn");
+const activePlayerNameElement = document.getElementById('active-player-name');
+const gameOverElement = document.getElementById('game-over');
 
-const closeOverlayElement = document.getElementById("close-overlay");
 
-editPlayer1BtnElement.addEventListener("click", openPlayerConfig);
-editPlayer2BtnElement.addEventListener("click", openPlayerConfig);
 
-closeOverlayElement.addEventListener("click", closePlayerConfig);
-backdropElement.addEventListener("click", closePlayerConfig);
-formElement.addEventListener("submit", savePlayerConfig);
+const editPlayer1BtnElement = document.getElementById('edit-player-1-btn');
+const editPlayer2BtnElement = document.getElementById('edit-player-2-btn');
+const closeOverlayElement = document.getElementById('close-overlay');
+
+const startNewGameButtonElement = document.getElementById('start-game-btn')
+const gameAreaElement = document.getElementById('active-game')
+/* const gameFieldElements = document.querySelectorAll('#game-board Li'); */
+const gameBoardElement = document.getElementById('game-board')
+
+editPlayer1BtnElement.addEventListener('click', openPlayerConfig);
+editPlayer2BtnElement.addEventListener('click', openPlayerConfig);
+
+closeOverlayElement.addEventListener('click', closePlayerConfig);
+backdropElement.addEventListener('click', closePlayerConfig);
+formElement.addEventListener('submit', savePlayerConfig);
+startNewGameButtonElement.addEventListener('click', startNewGame);
+
+gameBoardElement.addEventListener('click', selectGameField)
+
+
+/*for (const gameFieldElement of gameFieldElements) {
+    gameFieldElement.addEventListener('click', selectGameField);
+} */

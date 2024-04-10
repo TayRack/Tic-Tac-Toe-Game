@@ -1,3 +1,4 @@
+//open edit player name overlay
 function openPlayerConfig(event) {
     const selectedPlayerId= +event.target.dataset.playerid;  //The playerid value 1 or 2 // + '1' -> 1 // if data.plyer-id, to access properties on javascript objects -> dataset['player-id']
     editedPlayer = selectedPlayerId;
@@ -5,6 +6,7 @@ function openPlayerConfig(event) {
     backdropElement.style.display = "block";
 }
 
+// Close edit name overlay
 function closePlayerConfig() {
     playerConfigOverlayElement.style.display = "none";
     backdropElement.style.display = "none";
@@ -42,3 +44,4 @@ function savePlayerConfig(event) {
 
     closePlayerConfig();
 }
+

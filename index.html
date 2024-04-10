@@ -12,6 +12,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" 
 rel="stylesheet">
 <title>Tic Tac Toe </title>
+
+<script src="Scripts/game.js" defer></script>
+<script src="Scripts/Config.js" defer></script>
+<script src="Scripts/app.js" defer></script>
+
 </head>
 <body>
     <div id="backdrop"></div>
@@ -53,7 +58,7 @@ rel="stylesheet">
                     </article>
                 </li>        
             </ol>
-            <button class="btn">Start New Game</button>
+            <button type="button" class="btn" id="start-game-btn">Start New Game</button>
         </section>
         <section id="active-game">
             <article id="game-over">
@@ -63,22 +68,19 @@ rel="stylesheet">
 
             <p>It's your turn <span id="active-player-name">PLAYER NAME</span>!</p>
             <ol id="game-board">
-                <li class="disabled">X</li>
-                <li></li>
-                <li class="disabled">O</li>
+                <li data-col="1", data-row="1"></li>
+                <li data-col="2", data-row="1"></li>
+                <li data-col="3", data-row="1"></li>
 
-                <li></li>
-                <li></li>
-                <li></li>
+                <li data-col="1", data-row="2"></li>
+                <li data-col="2", data-row="2"></li>
+                <li data-col="3", data-row="2"></li>
 
-                <li ></li>
-                <li ></li>
-                <li ></li>
+                <li data-col="1", data-row="3"></li>
+                <li data-col="2", data-row="3"></li>
+                <li data-col="3", data-row="3"></li>
             </ol>
         </section>
     </main>
-    <script src="Scripts/game.js" defer></script>
-    <script src="Scripts/Config.js" defer></script>
-    <script src="Scripts/app.js" defer></script>
 </body>
 </html>
